@@ -154,7 +154,11 @@ footer{
 .carousel-caption p { 
     font-size: 0.8rem; 
 }
-    
+  .carousel-caption { 
+    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre pour améliorer la lisibilité du texte */ 
+    padding: 5px; 
+    border-radius: 10px; 
+}  
 }
 
 .def{
