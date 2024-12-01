@@ -159,6 +159,12 @@ footer{
     padding: 5px; 
     border-radius: 10px; 
 }  
+
+    .carousel-item img {
+    border-radius: 10px;
+    object-fit: cover;
+    filter: brightness(50%);
+}
 }
 
 .def{
