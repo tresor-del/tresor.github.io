@@ -146,6 +146,15 @@ footer{
     display: grid;
     place-items: center;
 }
+
+    
+.carousel-caption h5 { 
+    font-size: 1.1rem; 
+} 
+.carousel-caption p { 
+    font-size: 0.8rem; 
+}
+    
 }
 
 .def{
