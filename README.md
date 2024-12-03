@@ -15,4 +15,4 @@ Bienvenue sur mon site web personnel hébergé sur GitHub Pages.
 Ouvrez le fichier index.html dans votre navigateur.
 
 Licence
-Ce projet est sous licence MIT. Voir le fichier [LICENCE](LICENSE) pour plus de détails.
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
