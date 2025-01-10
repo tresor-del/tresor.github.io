@@ -1,189 +1,412 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adzanto Trésor</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <title>Trésor Adzanto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .btn-dark-mode {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .img-fluid {
+            max-width: 150px;
+        }
+
+        .project-card {
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .start{
+            position: fixed;
+            bottom: 100px;
+            right: 10px;
+            z-index: 1000;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container-i">
+    <button class="btn btn-dark-mode btn-outline-secondary" onclick="toggleDarkMode()">
+        <i class="bi bi-moon-fill"></i>
+    </button>
+    
 
-        <div class="section-text" >
-            
-            <h1><a href="index.html" class="a">Adzanto Trésor</a></h1>
-            <p>Étudiant en mathématique <br> et dévelopeur web</p>
-            <p>
-            <div>
-                <a target="_blank" class="liens" href="https://www.facebook.com/profile.php?id=100071136857161" alt="Facebook" title="Visitez mon profil Facebook">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a target="_blank" class="liens" href="https://github.com/tresor-del/" alt="GitHub" title="Visitez mon profil GitHub">
-                    <i class="bi bi-github"></i>
-                </a>
-                <a target="_blank" class="liens" href="https://www.instagram.com/motivperso.mp24/" alt="Instagram" title="Visitez mon profil Instagram">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a target="_blank" class="liens" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/" alt="LinkedIn" title="Visitez mon profil LinkedIn">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a target="_blank" href="https://x.com/TAdzanto" alt="Twitter" title="Visitez mon profil Twitter">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="https://wa.me/22898935845" target="_blank" alt="WhatsApp" title="Envoyez-moi un message sur WhatsApp">
-                    <i class="bi bi-whatsapp"></i>
-                </a>
-                <a href="mailto:tresoradzanto7@gmail.com" target='_blank' alt="Email" title="Envoyez-moi un email"></a>
-                    <i class="bi bi-envelope"></i>
-                </a>
+    <div class="container py-5">
+        <!-- Présentation -->
+        <div class="row align-items-center mb-5" id="start" style="min-height: 100vh; overflow: hidden;">
+            <div class="col-md-12 text-center text-md-start">
+                <div class="info d-md-flex flex-column flex-md-row justify-content-center">
+                    <div class="text-center  text-md-start mb-4 mb-md-0">
+                        <div class="ms-md-4 d-md-flex">
+                            <img src="img.jpg" alt="Photo de Trésor Adzanto" class="img-fluid rounded-circle border shadow m-3" style="width: 250px; height: 250px;">
+                            <div>
+                                <h1 style="font-weight: bold; font-size: clamp(40px, 8vw, 80px);">Adzanto Trésor</h1>
+                                <div class=" m-4">
+                                    <p>Étudiant en mathématiques et développeur web</p>
+                                    <div class="d-flex justify-content-center justify-content-md-start gap-3 my-3">
+                                        <a target="_blank" class="liens" href="https://www.facebook.com/profile.php?id=100071136857161" title="Visitez mon profil Facebook">
+                                            <i class="bi bi-facebook fs-4"></i>
+                                        </a>
+                                        <a target="_blank" class="liens" href="https://github.com/tresor-del/" title="Visitez mon profil GitHub">
+                                            <i class="bi bi-github fs-4"></i>
+                                        </a>
+                                        <a target="_blank" class="liens" href="https://www.instagram.com/motivperso.mp24/" title="Visitez mon profil Instagram">
+                                            <i class="bi bi-instagram fs-4"></i>
+                                        </a>
+                                        <a target="_blank" class="liens" href="https://www.linkedin.com/in/tr%C3%A9sor-adzanto-738147283/" title="Visitez mon profil LinkedIn">
+                                            <i class="bi bi-linkedin fs-4"></i>
+                                        </a>
+                                        <a target="_blank" href="https://x.com/TAdzanto" title="Visitez mon profil Twitter">
+                                            <i class="bi bi-twitter fs-4"></i>
+                                        </a>
+                                        <a href="https://wa.me/22898935845" target="_blank" title="Envoyez-moi un message sur WhatsApp">
+                                            <i class="bi bi-whatsapp fs-4"></i>
+                                        </a>
+                                        <a href="mailto:tresoradzanto7@gmail.com" target="_blank" title="Envoyez-moi un email">
+                                            <i class="bi bi-envelope fs-4"></i>
+                                        </a>
+                                    </div>
+                                    <p class="text-center text-md-start">
+                                        
+                                        <a href="#about-me" style="text-decoration: underline; color: #007bff;">
+                                            <i class="fas fa-user"></i> En savoir plus sur moi
+                                        </a>   
+                                        &nbsp;|&nbsp;
+                                        <a style="cursor: pointer; text-decoration: underline; color: #007bff;" target="_blank" href="CV.pdf">
+                                            <i class="fas fa-file-alt"></i> Voir mon CV
+                                        </a>
+                                        &nbsp;|&nbsp;
+                                        <a href="#projects" style="text-decoration: underline; color: #007bff;">
+                                            <i class="fas fa-folder-open"></i> Découvrir mes projets CS50W
+                                        </a>
+                                                                             
+                                    </p>
+                                    
+                                </div>               
+                                
+                            </div>
+                        </div> 
+                    </div>
+                </div>
             </div>
-            </p>
-            <p><a style="cursor:pointer;" class="a" data-id="cv">CV</a>,</p>
-            <p><a href="#project" >Projets CS50W </a></p>
         </div>
+        
+        <a href="#start" class="start d-none fs-1">
+            <i class="bi bi-arrow-up-circle"></i>
+        </a>
+        
+        <script>
+            window.onscroll = function() {
+                var scrollTop = window.scrollY || document.documentElement.scrollTop;
+                var startLink = document.querySelector('.start');
+                if (scrollTop > 200) {
+                    startLink.classList.remove('d-none');
+                } else {
+                    startLink.classList.add('d-none');
+                }
+            };
+        </script>
+        
 
-        <div class="def section-image" id="image" style="width: 100%; max-width: 500px;">
-            <section id="about-me" class=" flex-column flex-md-row align-items-center">
-            <img src="img.jpg" alt="Photo de Trésor Adzanto" class="img-fluid rounded-circle mb-3 mb-md-0 me-md-3" style="width: 150px; height: 200px; float: left; margin-right:20px;">
+        <!-- À propos de moi -->
+        <section id="about-me" class="mb-5 d-flex justify-content-center align-items-center" style="min-height: 100vh; overflow: hidden;">
             <div>
-                <p>Bonjour, je suis Trésor Adzanto, un développeur web passionné par la création de solutions numériques innovantes. Ma formation en développement web m'a permis de travailler avec des technologies comme JavaScript, Python, React.js et Django. J'aime relever des défis techniques et contribuer à des projets collaboratifs.</p>
-                <p>Je suis constamment à la recherche de nouvelles opportunités pour apprendre et améliorer mes compétences. Mon objectif est de développer des applications web performantes et intuitives qui répondent aux besoins des utilisateurs.</p>
-                <p>En dehors du développement, j'aime partager mes connaissances avec la communauté et participer à des événements technologiques. Je crois fermement que la collaboration et l'échange d'idées sont essentiels pour l'innovation.</p>
+                <h2 class="text-center">À Propos de Moi</h2>
+                <p class="text-center">
+                    Je suis Trésor Adzanto, un passionné de développement web et étudiant en mathématiques. Depuis toujours, 
+                    je suis fasciné par la manière dont les mathématiques et la technologie se complètent pour résoudre des problèmes complexes et améliorer le quotidien. 
+                    Cette passion m'a conduit à explorer divers domaines de la programmation et à me spécialiser dans le développement web.
+                </p>
+                <p class="text-center">
+                    Mon parcours académique et autodidacte m'a permis de maîtriser plusieurs technologies, notamment 
+                    <strong>JavaScript</strong>, <strong>Python</strong>, <strong>React.js</strong> et <strong>Django</strong>. 
+                    J'ai eu l'opportunité d'appliquer ces compétences dans des projets pratiques, en mettant un accent particulier sur la création 
+                    de solutions numériques innovantes et sur la résolution de problèmes liés à l'expérience utilisateur.
+                </p>
+                <p class="text-center">
+                    L'un des moments marquants de mon apprentissage a été ma participation au cours <strong>CS50W</strong> (Harvard's Web Programming with Python and JavaScript). 
+                    Grâce à ce programme, j'ai approfondi mes connaissances sur les concepts avancés du développement web tels que les API, 
+                    l'authentification, les bases de données relationnelles, et bien d'autres. J'ai également conçu et réalisé plusieurs projets 
+                    dans le cadre de ce cours, que vous pouvez découvrir dans la section dédiée de ce site.
+                </p>
+                <p class="text-center">
+                    Aujourd'hui, je suis toujours en quête de nouvelles opportunités pour apprendre et évoluer. Mon objectif est de 
+                    devenir un développeur web polyvalent capable de concevoir des applications performantes, intuitives, et répondant aux besoins réels des utilisateurs. 
+                    Que ce soit en collaborant sur des projets d'équipe ou en explorant des idées innovantes en solo, 
+                    je suis animé par l'envie de créer un impact positif grâce à la technologie.
+                </p>
             </div>
-            </section>
-        </div>
+              
+        </section>
 
+        <!-- Projets -->
 
-        <div class="def container2" id="cv">
-           <embed src="CV.pdf" width="600" height="600" type="application/pdf">
-        </div>
+        <section id="projects" class="my-5  " style="min-height: 100vh; overflow: hidden;">
+            <h2 class="text-center mt-5">Mes Projets</h2><hr>
+
+            <!-- Carousel de projets -->
+            <div id="projectsCarousel" class="carousel slide d-none d-md-block" data-bs-ride="false">
+                <!-- Indicateurs de navigation -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                </div>
+
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <!-- Slide 1 : Search -->
+                    <div class="carousel-item active">
+                        <div class="carousel-image-wrapper">
+                            <img src="search.png" class="d-block w-100" alt="Projet Search" style="height: 400px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4">
+                                <h5>Projet 1 : Search</h5>
+                                <p>Reproduction de Google avec une fonctionnalité de recherche permettant aux utilisateurs de rechercher des informations sur le web, incluant l'affichage des résultats en temps réel.</p>
+                                <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/search" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 : Commerce -->
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="commerce.png" class="d-block w-100" alt="Projet Commerce" style="height: 450px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4">
+                                <h5>Commerce</h5>
+                                <p>Création d'une plateforme d'e-commerce complète avec des fonctionnalités telles que la gestion du panier, la validation des paiements et un espace client personnalisé.</p>
+                                <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/commerce" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 : Mail -->
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="mail.png" class="d-block w-100" alt="Projet Mail" style="height: 400px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4">
+                                <h5>Mail</h5>
+                                <p>Application d'email inspirée de Gmail avec gestion des boîtes de réception, des brouillons et des filtres personnalisés pour une meilleure organisation des emails.</p>
+                                <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/mail" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 : Wiki -->
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="wiki.png" class="d-block w-100" alt="Projet Wiki" style="height: 420px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4">
+                                <h5>Wiki</h5>
+                                <p>Développement d'une application d'encyclopédie en ligne permettant aux utilisateurs de créer, modifier et consulter des articles sur différents sujets.</p>
+                                <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/wiki" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 : Network -->
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="network.png" class="d-block w-100" alt="Projet Network" style="height: 430px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4">
+                                <h5>Network</h5>
+                                <p>Création d'une application de réseau social permettant aux utilisateurs de se connecter, de partager du contenu et d'interagir avec leurs amis et abonnés.</p>
+                                <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/network" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 : Capstone -->
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="ematrix.png" class="d-block w-100" alt="Projet Capstone" style="height: 460px; object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-4">
+                                <h5>Capstone (eMatrix)</h5>
+                                <p>Développement d'une application de gestion de tâches basée sur la matrice d'Eisenhower pour aider les utilisateurs à organiser leurs priorités et à améliorer leur productivité.</p>
+                                <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/capstone" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contrôles de navigation avec icônes Bootstrap -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                    <span class="visually-hidden">Précédent</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                    <span class="visually-hidden">Suivant</span>
+                </button>
+            </div>
+
+            <!-- Ajouter le CSS pour personnaliser les styles -->
+            <style>
+                /* Assombrir les images de fond */
+                .carousel-image-wrapper {
+                    position: relative;
+                }
+                .carousel-image-wrapper img {
+                    filter: brightness(60%); /* Assombrir l'image */
+                }
+
+                /* Styles des boutons de navigation */
+                .carousel-control-prev-icon, .carousel-control-next-icon {
+                    background-color: #fff; /* Change la couleur de l'icône */
+                    border-radius: 50%;
+                    font-size: 1.5rem; /* Taille des icônes */
+                }
+                .carousel-control-prev, .carousel-control-next {
+                    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre pour les boutons */
+                }
+
+                /* Assombrir les légendes */
+                .carousel-caption {
+                    background-color: rgba(0, 0, 0, 0.5) !important; /* Fond sombre transparent */
+                    padding: 20px;
+                }
+            </style>
+
+    
+
+             <!-- Sur les pétits écrans -->
+            <div class="row g-4 d-md-none">
+                <!-- Projet 1 : Search -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="search.png" class="card-img-top" alt="Projet Search">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 1 : Search</h5>
+                            <p class="card-text">Reproduction de Google avec une fonctionnalité de recherche permettant aux utilisateurs de rechercher des informations sur le web, incluant l'affichage des résultats en temps réel.</p>
+                            <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/search" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                        </div>
+                    </div>
+                </div><hr>
+
+                <!-- Projet 2 : Commerce -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="commerce.png" class="card-img-top" alt="Projet Commerce">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 2 : Commerce</h5>
+                            <p class="card-text">Création d'une plateforme d'e-commerce complète avec des fonctionnalités telles que la gestion du panier, la validation des paiements et un espace client personnalisé.</p>
+                            <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/commerce" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                        </div>
+                    </div>
+                </div><hr>
+
+                <!-- Projet 3 : Mail -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="mail.png" class="card-img-top" alt="Projet Mail">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 3 : Mail</h5>
+                            <p class="card-text">Application d'email inspirée de Gmail avec gestion des boîtes de réception, des brouillons et des filtres personnalisés pour une meilleure organisation des emails.</p>
+                            <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/mail" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                        </div>
+                    </div>
+                </div><hr>
+
+                <!-- Projet 4 : Wiki -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="wiki.png" class="card-img-top" alt="Projet Wiki">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 4 : Wiki</h5>
+                            <p class="card-text">Développement d'une application d'encyclopédie en ligne permettant aux utilisateurs de créer, modifier et consulter des articles sur différents sujets.</p>
+                            <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/wiki" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                        </div>
+                    </div>
+                </div><hr>
+
+                <!-- Projet 5 : Network -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="network.png" class="card-img-top" alt="Projet Network">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 5 : Network</h5>
+                            <p class="card-text">Création d'une application de réseau social permettant aux utilisateurs de se connecter, de partager du contenu et d'interagir avec leurs amis et abonnés.</p>
+                            <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/network" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                        </div>
+                    </div>
+                </div><hr>
+
+                <!-- Projet 6 : Capstone -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="ematrix.png" class="card-img-top" alt="Projet Capstone">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet final : Capstone</h5>
+                            <p class="card-text">Développement d'une application de gestion de tâches basée sur la matrice d'Eisenhower pour aider les utilisateurs à organiser leurs priorités et à améliorer leur productivité.</p>
+                            <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/capstone" class="btn btn-primary" target="_blank">Voir sur GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
 
     </div>
 
-    <div class="container my-5" id="project">
-        <h1 style="margin-bottom: 10px;">Projets CS50W</h1>
-        <div id="projectsCarousel" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Projet 1 -->
-                <div class="carousel-item active">
-                    <img src="search.png" class="d-block w-100" alt="Projet 1">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Projet 0 : Search</h5>
-                        <p>Ce projet consiste à faire le design de Google et à permettre aux utilisateurs de faire des recherches.</p>
-                        <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/search" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                    </div>
-                </div>
-    
-                <!-- Projet 2 -->
-                <div class="carousel-item">
-                    <img src="wiki.png" class="d-block w-100" alt="Projet 2">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Projet 1 : Wiki</h5>
-                        <p>Création d'une application web pour créer, éditer et visualiser des pages de type wiki.</p>
-                        <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/wiki" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                    </div>
-                </div>
-    
-                <!-- Projet 3 -->
-                <div class="carousel-item">
-                    <img src="commerce.png" class="d-block w-100" alt="Projet 3">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Projet 2 : Commerce</h5>
-                        <p>Développement d'une plateforme de commerce en ligne où les utilisateurs peuvent acheter et vendre des produits.</p>
-                        <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/commerce" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                    </div>
-                </div>
-    
-                <!-- Projet 4 -->
-                <div class="carousel-item">
-                    <img src="mail.png" class="d-block w-100" alt="Projet 4">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Projet 3 : Mail</h5>
-                        <p>Application de messagerie web permettant aux utilisateurs d'envoyer et de recevoir des emails.</p>
-                        <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/mail" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                    </div>
-                </div>
-    
-                <!-- Projet 5 -->
-                <div class="carousel-item">
-                    <img src="network.png" class="d-block w-100" alt="Projet 5">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Projet 4 : Réseau Social</h5>
-                        <p>Création d'un réseau social où les utilisateurs peuvent publier des messages et suivre d'autres utilisateurs.</p>
-                        <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/network" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Contrôles du carousel -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Précédent</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Suivant</span>
-            </button>
-        </div>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 
-        <!-- Projects list for small screens -->
-        <div class="d-block d-md-none">
-            <!-- Projet 1 -->
-            <div class="mb-4">
-                <img src="search.png" class="d-block w-100" alt="Projet 1">
-                <div class="mt-2">
-                    <h5>Projet 0 : Search</h5>
-                    <p>Ce projet consiste à faire le design de Google et à permettre aux utilisateurs de faire des recherches.</p>
-                    <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/search" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                </div>
+<footer class="text-center bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 mb-3">
+                <h5>À propos</h5>
+                <p>Trésor Adzanto est un développeur passionné par la création d'applications web et la technologie. Vous pouvez suivre mes projets et travaux sur GitHub et autres plateformes.</p>
             </div>
-
-            <!-- Projet 2 -->
-            <div class="mb-4">
-                <img src="wiki.png" class="d-block w-100" alt="Projet 2">
-                <div class="mt-2">
-                    <h5>Projet 1 : Wiki</h5>
-                    <p>Création d'une application web pour créer, éditer et visualiser des pages de type wiki.</p>
-                    <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/wiki" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                </div>
+            <div class="col-12 col-md-4 mb-3">
+                <h5>Contact</h5>
+                <p>Email: <a href="mailto:tresoradzanto7@gmail.com" class="text-white">tresoradzanto7@gmail.com</a></p>
+                <p>Phone: +228 98935845</p>
             </div>
-
-            <!-- Projet 3 -->
-            <div class="mb-4">
-                <img src="commerce.png" class="d-block w-100" alt="Projet 3">
-                <div class="mt-2">
-                    <h5>Projet 2 : Commerce</h5>
-                    <p>Développement d'une plateforme de commerce en ligne où les utilisateurs peuvent acheter et vendre des produits.</p>
-                    <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/commerce" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                </div>
-            </div>
-
-            <!-- Projet 4 -->
-            <div class="mb-4">
-                <img src="mail.png" class="d-block w-100" alt="Projet 4">
-                <div class="mt-2">
-                    <h5>Projet 3 : Mail</h5>
-                    <p>Application de messagerie web permettant aux utilisateurs d'envoyer et de recevoir des emails.</p>
-                    <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/mail" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
-                </div>
-            </div>
-
-            <!-- Projet 5 -->
-            <div class="mb-4">
-                <img src="network.png" class="d-block w-100" alt="Projet 5">
-                <div class="mt-2">
-                    <h5>Projet 4 : Réseau Social</h5>
-                    <p>Création d'un réseau social où les utilisateurs peuvent publier des messages et suivre d'autres utilisateurs.</p>
-                    <a href="https://github.com/me50/tresor-del/tree/web50/projects/2020/x/network" class="btn btn-warning" target="_blank">Voir le projet sur GitHub</a>
+            <div class="col-12 col-md-4 mb-3">
+                <h5>Suivez-moi</h5>
+                <div>
+                    <a href="https://github.com/tresor-del" target="_blank" class="btn btn-outline-light btn-sm mx-2"><i class="bi bi-github"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/tresoradzanto" target="_blank" class="btn btn-outline-light btn-sm mx-2"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                    <a href="https://twitter.com/tresoradzanto" target="_blank" class="btn btn-outline-light btn-sm mx-2"><i class="bi bi-twitter"></i> Twitter</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer> <p>©Trésor Adzanto</p> </footer>
+    <div class="mt-4">
+        <p>&copy; 2025 Trésor Adzanto. Tous droits réservés.</p>
+    </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
