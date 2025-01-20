@@ -35,6 +35,33 @@ document.addEventListener('DOMContentLoaded', function(){
     };
 
 
+    particlesJS('start', {
+        particles: {
+          number: {
+            value: 100,
+          },
+          size: {
+            value: 3,
+          },
+          move: {
+            speed: 1,
+          },
+          shape: {
+            type: [ "star"], // Plusieurs formes aléatoires
+          },
+          opacity: {
+            value: 0.5, // Opacité de base
+            anim: {
+              enable: true, // Active l'animation de l'opacité
+              speed: 1, // Vitesse de l'animation
+              opacity_min: 0.1, // Opacité minimale durant l'animation
+              sync: false, // Si vous voulez que l'animation soit synchronisée entre toutes les particules
+            },
+        }
+        }
+      });
+
+
     // document.querySelector('#toggleButton').addEventListener('click', function(){
     //     toggleDarkMode();
     // })
