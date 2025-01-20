@@ -153,9 +153,6 @@ footer {
   
   /* Réduction de la taille pour les petits écrans */
   @media screen and (max-width: 768px) {
-    #h2{
-      white-space: wrap;
-    }
     .responsive-text {
       font-size: 35px;
       line-height: 1.4;
@@ -164,11 +161,7 @@ footer {
   }
   
   @media screen and (max-width: 480px) {
-   
-    #h2{
-      white-space: wrap;
-    }
-    
+
     .responsive-text {
       font-size: 30px;
       line-height: 1.3;
@@ -203,7 +196,6 @@ footer {
   font-weight: bolder;
   color: white;
   display: inline-block;
-  white-space: nowrap;
   overflow:hidden; /* Cache tout texte en dehors de la largeur définie */
   border-right: 4px solid white; /* Ajoute un curseur à droite pour simuler la saisie */
   width: 0; /* Commence avec une largeur de 0 */
